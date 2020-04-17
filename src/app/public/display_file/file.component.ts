@@ -1,24 +1,26 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpEventType } from '@angular/common/http';
 
 @Component({
   selector: 'app-image-upload-with-preview',
   templateUrl: './file.component.html',
+  styles: ['file.component.css']
 })
 export class FileComponent implements OnInit {
     title = 'ach-validator-app';
-  constructor(private http: HttpClient) { }
-   
+
+  constructor() { }
+
   ngOnInit() {
   }
-  fileContent: string = '';
+  fileContent: Array<String>;
 
   public onChange(fileList: FileList): any {
     let file = fileList[0];
     let fileReader: FileReader = new FileReader();
     let self = this;
     fileReader.onloadend = function(x) {
-      self.fileContent = fileReader.result.toString();
+      var array = fileReader.result.toString().split("\n");
+      self.fileContent = array;
     }
     fileReader.readAsText(file);
   }
