@@ -1,25 +1,25 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { AppComponent } from './app.component';
+import { FileComponent } from './display_file/file.component';
 import { RouterModule } from '@angular/router';
-import { appRoutes } from './routes';
+import { publicRoutes} from './public.routes';
 import { HttpClientModule } from '@angular/common/http';
-import { PublicModule } from './public/public.module'
+import { from } from 'rxjs';
+
+
 @NgModule({
   declarations: [
-    AppComponent
+    FileComponent
   ],
   imports: [
     HttpClientModule,
     BrowserModule,
     NgbModule,
-    RouterModule.forRoot(appRoutes),
-    PublicModule
-
+    RouterModule.forRoot(publicRoutes)
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [FileComponent]
 
 })
-export class AppModule { }
+export class PublicModule { }
