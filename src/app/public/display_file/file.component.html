@@ -1,5 +1,7 @@
 <div>
-    <pre>{{fileContent}} </pre>
+    <li *ngFor = "let content of fileContent" type="1">
+      {{ content }}
+    </li>
 </div>
 <input type="file" accept='text/plain' (change)="onChange($event.target.files)">
 
