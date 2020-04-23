@@ -8,7 +8,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { PublicModule } from './public/public.module'
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ErrorpageComponent,
+    HomepageComponent,
+    ErrorboxComponent,
+    NoerrorpageComponent
   ],
   imports: [
     HttpClientModule,
