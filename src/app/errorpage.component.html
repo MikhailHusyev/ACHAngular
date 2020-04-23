@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial;
+  color: white;
+}
+
+.split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.left {
+  left: 0;
+  background-color: #111;
+}
+
+.right {
+  right: 0;
+  background-color: crimson;
+}
+
+.largeLetter
+{
+	font-size:240%;
+ 	font-family:impact;
+}
+</style>
+</head>
+<body>
+
+<div class="split left">
+  <div class="centered">
+    <img src="myfile.jpg" alt="NACHA file, errors highlighted">
+  </div>
+</div>
+
+<div class="split right" style="text-align:center;">
+    <h2><i><span class="largeLetter">O</span></i>ur
+ 		<i><span class="largeLetter">H</span></i>unch
+		<i><span class="largeLetter">!</span></i>
+	</h2>
+ 	<h2><i><span class="largeLetter">N</span></i>eighborly
+ 		<i><span class="largeLetter">O</span></i>bservations
+		<i><span class="largeLetter">!</span></i>
+	</h2>
+	<br><br>
+    <app-errorbox></app-errorbox>
+	<button>Return Home
+ 	</button>
+</div>
+ 
+</body>
+</html> 
+
