@@ -9,10 +9,6 @@ import { PublicModule } from './public/public.module'
 @NgModule({
   declarations: [
     AppComponent,
-    ErrorpageComponent,
-    HomepageComponent,
-    ErrorboxComponent,
-    NoerrorpageComponent
   ],
   imports: [
     HttpClientModule,
