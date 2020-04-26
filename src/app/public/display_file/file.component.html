@@ -1,6 +1,11 @@
 <div>
-    <li *ngFor = "let content of fileContent" type="1">
+  <ol>
+    <p style="font-family:Consolas; font-style:Regular; font-size:11px">
+    <li *ngFor = "let content of fileContent" type="1" >
       {{ content }}
     </li>
+    </p>
+  </ol>
 </div>
+<input type="file" accept='text/plain' (change)="onChange($event.target.files)">
 
