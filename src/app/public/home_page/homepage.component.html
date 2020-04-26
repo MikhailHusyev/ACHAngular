@@ -1,45 +1,18 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>My First HTML</title>
-  <meta charset="UTF-8">
-<style>
-.largeLetter
-{
-	font-size:240%;
- 	font-family:impact;
-}
-.centered
-{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-</style>
-</head>
-<body style="background-color:crimson;">
-
-<h1 style="color:white; font-size:35px;text-align:center; font-family:courier;background-color:black; border-style:solid; border-color:white;">
- 	<span class="largeLetter">N</span>ACHA
- 	<span class="largeLetter">E</span>ntries
- 	<span class="largeLetter">A</span>ccuracy
- 	<span class="largeLetter">T</span>est
-</h1>
-
-<p style="color:white; font-size:25px; text-align:center;">Brought to you by students of the University of Central Missouri</p>
-<br>
-<br>
-<span class="centered">
-	<form action="/action_page.php">
-  		<label for="myfile" style="color:white; font-size:20px;background-color:black;">Select a NACHA file:
-		</label>
-  		<input type="file" id="myfile" name="myfile">
-		<br>
-		<br>
-  		<input type="submit">
-	</form>
-</span>
-</body>
-</html>
+<div class="container-fluid">
+  <div class="row mt-1a">
+      <div class = "col-lg-6">
+          <div class="p-5">
+              <app-image-upload-with-preview
+              [fileContent] = "fileContent"></app-image-upload-with-preview>
+          </div>
+      </div>
+  </div>
+  <div class = "input-group">
+      <input type = "file" class ="inputfile" id ="file" accept='text/plain' (change)="onChange($event.target.files)" value="Input">
+      <button type = "button" class ="btn btn-outline-secondary -col-3 mx-1" >Close</button>
+      <button type = "button" class ="btn btn-outline-secondary -col-4 mx-2">Validate</button>
+  </div>
+  <div class = "row text-center">
+      <div class = "col-lg-2 mt-5"><h1>Message</h1></div>
+  </div>
+</div>
