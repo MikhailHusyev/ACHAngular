@@ -1,7 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, APP_BOOTSTRAP_LISTENER } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FileComponent } from './display_file/file.component';
+import { HomePageComponent} from './home_page/homepage.component';
+import { ErrorComponent } from './components/error_message/errormsg.component';
 import { RouterModule } from '@angular/router';
 import { publicRoutes} from './public.routes';
 import { HttpClientModule } from '@angular/common/http';
@@ -10,7 +12,9 @@ import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
-    FileComponent
+    FileComponent,
+    HomePageComponent,
+    ErrorComponent
   ],
   imports: [
     HttpClientModule,
@@ -19,7 +23,7 @@ import { from } from 'rxjs';
     RouterModule.forRoot(publicRoutes)
   ],
   providers: [],
-  bootstrap: [FileComponent]
+  bootstrap: [FileComponent],
 
 })
 export class PublicModule { }
