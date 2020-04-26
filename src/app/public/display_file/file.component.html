@@ -1,7 +1,9 @@
 <div>
-    <li *ngFor = "let content of fileContent" type="1">
+    <pre name="nachaPre" [(ngModel)]="textValue" #ctrl="ngModel" required>
+    </pre>
+    <!--<li *ngFor = "let content of fileContent" type="1">
       {{ content }}
-    </li>
+    </li>-->
 </div>
 <input type="file" accept='text/plain' (change)="onChange($event.target.files)">
 
