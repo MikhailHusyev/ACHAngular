@@ -11,8 +11,8 @@ export class HomePageComponent implements OnInit {
     buttonText = 'Search';
 
     constructor() { }
-    
-    ngOnInit() { 
+
+    ngOnInit() {
 
     }
 
