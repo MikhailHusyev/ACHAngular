@@ -46,7 +46,7 @@
       <h4>Effective Date</h4>
     </div>
     <div class = "col-lg text-right border border-dark mx-1">
-      <p class="record">{{batchHeader?.effectiveDate}}</p>
+      <p class="record">{{batchHeader?.effectiveDate | date:'shortDate'}}</p>
     </div>
   </div>
   <div class = "row mt-3">
@@ -74,13 +74,13 @@
         <h4>TTL Debit Entry $-Amount</h4>
       </div>
       <div class = "col-lg text-right border border-dark mx-1">
-        <p class="record">{{batchControl?.ttldebitEntryAmount}}</p>
+        <p class="record">{{batchControl?.ttldebitEntryAmount/100| currency}}</p>
       </div>
       <div class = "col-lg text-right border border-dark mx-1">
          <h4>TTL Debit Credit $-Amount</h4>
       </div>
       <div class = "col-lg text-right border border-dark mx-1">
-        <p class="record">{{batchControl?.ttlcreditEntryAmount}}</p>
+        <p class="record">{{batchControl?.ttlcreditEntryAmount/100 | currency}}</p>
       </div>
       <div class = "col-lg text-right border border-dark mx-1">
         <h4>Company ID</h4>
@@ -114,13 +114,13 @@
       <h4>TTL Debit Entry $-Amount</h4>
     </div>
     <div class = "col-2 text-left border border-dark mx-1">
-      <p class="record">{{response?.fileControl?.ttldebitEntryAmount}}</p>
+      <p class="record">{{response?.fileControl?.ttldebitEntryAmount/100| currency}}</p>
     </div>
     <div class = "col-2 text-right border border-dark mx-1">
       <h4>TTL Debit Credit $-Amount</h4>
     </div>
     <div class = "col-2 text-right border border-dark mx-1">
-      <p class="record">{{response?.fileControl?.ttlcreditEntryAmount}}</p>
+      <p class="record">{{response?.fileControl?.ttlcreditEntryAmount/100| currency}}</p>
     </div>
   </div>
   <div class = "row mt-5">
