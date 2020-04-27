@@ -5,7 +5,8 @@ import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './routes';
 import { HttpClientModule } from '@angular/common/http';
-import { PublicModule } from './public/public.module'
+import { PublicModule } from './public/public.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,7 +16,8 @@ import { PublicModule } from './public/public.module'
     BrowserModule,
     NgbModule,
     RouterModule.forRoot(appRoutes),
-    PublicModule
+    PublicModule,
+    BrowserAnimationsModule
 
   ],
   providers: [],

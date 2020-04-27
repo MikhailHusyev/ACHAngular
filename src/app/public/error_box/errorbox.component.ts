@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { IError} from '../models/responses/error.model';
+import { IError } from '../models/responses/error.model';
 
 @Component({
   selector: 'app-errorbox',
@@ -10,12 +10,12 @@ export class ErrorboxComponent implements OnInit {
 
   constructor() { }
 
-  @Input() errors : Array<string> = ["FIRST ERROR", "SECOND ERROR", "THIRD ERROR"]
+  @Input() errors : Array<IError>
 
   ngOnInit(): void {
   }
 
-  setErrors(errors: Array<string>){
+  setErrors(errors: Array<IError>){
     this.errors = errors
   }
 }

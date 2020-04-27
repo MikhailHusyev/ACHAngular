@@ -7,3 +7,12 @@
 .head-text{
   color:red;
 }
+.example-viewport {
+  height: 200px;
+  width: 100%;
+  color: red;
+}
+
+.example-item {
+  height: 1.5rem;
+}

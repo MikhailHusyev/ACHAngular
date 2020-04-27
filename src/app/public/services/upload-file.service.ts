@@ -12,12 +12,12 @@ export class UploadFileService {
 
   errorModel: IResponse
 
-  putFile<T>(uploadFile: File): Promise<T>{
+  putFile<T>(uploadFile: File): Promise<IResponse>{
     const url = 'http://localhost:8080/api/v1/file/validate'
     let formdata = new FormData();
     formdata.append('file', uploadFile)
     console.log("Being CALLED")
-    return this.httpClient.post<T>(url, formdata).toPromise()
+    return this.httpClient.post<IResponse>(url, formdata).toPromise()
 
   }
 

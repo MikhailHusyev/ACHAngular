@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { IResponse } from '../models/error-response.model';
 
 @Component({
   selector: 'app-specification',
@@ -8,6 +9,6 @@ import { Component, OnInit } from '@angular/core';
 
 export class SpecificationComponent implements OnInit {
   constructor() { }
-
+  @Input() response: IResponse
   ngOnInit() { }
 }

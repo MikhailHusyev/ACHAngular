@@ -1,15 +1,128 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <h1>HEADER</h1>
+<div *ngIf="response">
+  <div class = "row mt-3">
+    <div class = "col-lg-3 border border-dark text-center">
+        <h4>File Header Record</h4>
     </div>
   </div>
-  <div class="row">
-      <div class="col-md-4">
-        <p>Destination</p>
+  <div class = "row mt-2 col-lg-12">
+    <div class = "col-lg text-right border border-dark mx-1">
+      <h4>Immediate Destination</h4>
+    </div>
+    <div class = "col-lg text-right border border-dark mx-1">
+      <p class="record">{{response?.fileHeader?.immediateDestination}}</p>
+    </div>
+    <div class = "col-lg text-right border border-dark mx-1">
+        <h4>Immediate Origin</h4>
+    </div>
+    <div class = "col-lg text-right border border-dark mx-1">
+      <p class="record">{{response?.fileHeader?.immediateOrigin}}</p>
+    </div>
+    <div class = "col-lg text-right border border-dark mx-1">
+        <h4>Immediate Origin Name</h4>
+    </div>
+    <div class = "col-lg text-right border border-dark mx-1">
+      <p class="record">{{response?.fileHeader?.immediateOriginName}}</p>
+    </div>
+  </div>
+  <div class = "row mt-3">
+    <div class = "col-lg-3 border border-dark text-center">
+      <h4>Batch Header Record</h4>
+    </div>
+  </div>
+  <div class ="row mt-4 col-lg" *ngFor="let batchHeader of response.batchHeaders">
+    <div class = "col-lg text-right border border-dark mx-1">
+      <h4>Company Name</h4>
+    </div>
+    <div class = "col-lg text-right border border-dark mx-1">
+      <p class="record">{{batchHeader?.companyName}}</p>
+    </div>
+    <div class = "col-lg text-right border border-dark mx-1">
+      <h4>Company ID</h4>
+    </div>
+    <div class = "col-lg text-right border border-dark mx-1">
+      <p class="record">{{batchHeader?.companyID}}</p>
+    </div>
+    <div class = "col-lg text-right border border-dark mx-1">
+      <h4>Effective Date</h4>
+    </div>
+    <div class = "col-lg text-right border border-dark mx-1">
+      <p class="record">{{batchHeader?.effectiveDate}}</p>
+    </div>
+  </div>
+  <div class = "row mt-3">
+    <div class = "col-lg-3 border border-dark text-center">
+      <h4>Batch Control Record</h4>
+    </div>
+  </div>
+  <div *ngFor="let batchControl of response.batchControls">
+    <div class = "row mt-3 col-lg text-right">
+      <div class = "col-2 text-right border border-dark mx-1">
+        <h4>Entry/Addenda Count</h4>
       </div>
-      <div class="col-md-4">
-        <p>Value</p>
+      <div class = "col-2 text-left border border-dark mx-1">
+        <p class="record">{{batchControl?.entryAndAddendaCount}}</p>
       </div>
+      <div class = "col-2 text-right border border-dark mx-1">
+        <h4>Entry Hash</h4>
+      </div>
+      <div class = "col-2 text-right border border-dark mx-1">
+        <p class="record">{{batchControl?.entryHash}}</p>
+      </div>
+    </div>
+    <div class ="row mt-4 col-lg">
+      <div class = "col-lg text-right border border-dark mx-1">
+        <h4>TTL Debit Entry $-Amount</h4>
+      </div>
+      <div class = "col-lg text-right border border-dark mx-1">
+        <p class="record">{{batchControl?.ttldebitEntryAmount}}</p>
+      </div>
+      <div class = "col-lg text-right border border-dark mx-1">
+         <h4>TTL Debit Credit $-Amount</h4>
+      </div>
+      <div class = "col-lg text-right border border-dark mx-1">
+        <p class="record">{{batchControl?.ttlcreditEntryAmount}}</p>
+      </div>
+      <div class = "col-lg text-right border border-dark mx-1">
+        <h4>Company ID</h4>
+      </div>
+      <div class = "col-lg text-right border border-dark mx-1">
+        <p class="record">{{batchControl?.companyID}}</p>
+      </div>
+    </div>
+  </div>
+  <div class = "row mt-3">
+    <div class = "col-lg-3 border border-dark text-center">
+      <h4>File Control Record</h4>
+    </div>
+  </div>
+  <div class = "row mt-3 col-lg text-right">
+    <div class = "col-2 text-right border border-dark mx-1">
+      <h4>Entry/Addenda Count</h4>
+    </div>
+    <div class = "col-2 text-left border border-dark mx-1">
+      <p class="record">{{response?.fileControl?.entryAndAddendaCount}}</p>
+    </div>
+    <div class = "col-2 text-right border border-dark mx-1">
+      <h4>Entry Hash</h4>
+    </div>
+    <div class = "col-2 text-right border border-dark mx-1">
+      <p class="record">{{response?.fileControl?.entryHash}}</p>
+    </div>
+  </div>
+  <div class = "row mt-3 col-lg text-right">
+    <div class = "col-2 text-right border border-dark mx-1">
+      <h4>TTL Debit Entry $-Amount</h4>
+    </div>
+    <div class = "col-2 text-left border border-dark mx-1">
+      <p class="record">{{response?.fileControl?.ttldebitEntryAmount}}</p>
+    </div>
+    <div class = "col-2 text-right border border-dark mx-1">
+      <h4>TTL Debit Credit $-Amount</h4>
+    </div>
+    <div class = "col-2 text-right border border-dark mx-1">
+      <p class="record">{{response?.fileControl?.ttlcreditEntryAmount}}</p>
+    </div>
+  </div>
+  <div class = "row mt-5">
   </div>
 </div>

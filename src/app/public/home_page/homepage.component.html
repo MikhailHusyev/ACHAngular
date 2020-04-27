@@ -1,18 +1,38 @@
-<div class="container-fluid">
-  <div class="row mt-1a">
-      <div class = "col-lg-6">
-          <div class="p-5">
+
+
+<div class="container mt-5 mx-auto">
+    <div class = "row">
+        <div class = "col-lg-12 text-center">
+            <h1>File Validator</h1>
+        </div>
+    </div>
+  <div class="row mx-auto mt-4">
+      <div class = "col-lg-12 mx-auto">
+          <div class="p-5 h-100 border border-dark">
               <app-image-upload-with-preview
               [fileContent] = "fileContent"></app-image-upload-with-preview>
           </div>
       </div>
   </div>
-  <div class = "input-group">
-      <input type = "file" class ="inputfile" id ="file" accept='text/plain' (change)="onChange($event.target.files)" value="Input">
-      <button type = "button" class ="btn btn-outline-secondary -col-3 mx-1" >Close</button>
-      <button type = "button" class ="btn btn-outline-secondary -col-4 mx-2">Validate</button>
+  <div class="row">
+      <div class = "col-lg-12 col-lg-offset-12 text-center">
+        <div class = "input-group-lg mt-5 mx-auto">
+        <button type = "button" class ="btn btn-secondary -col-3 mx-1" >Validate</button>
+        <button type = "button" class ="btn btn-secondary  -col-4 mx-2">Close</button>
+        <input type = "file" class ="inputfile text" id ="file" accept='text/plain' (change)="onChange($event.target.files)" value="Input">
+        </div>
+    </div>
   </div>
-  <div class = "row text-center">
-      <div class = "col-lg-2 mt-5"><h1>Message</h1></div>
+  <div class = "row mt-5">
+      <div class = "col-lg-12 text-center text-light bg-dark">
+          <h2> Message</h2>
+      </div>
   </div>
+    <app-errorbox [errors]="response.errors"></app-errorbox>
+  <div class = "row mt-5">
+      <div class = "col-lg-12 text-center text-light bg-dark">
+          <h2>Company Specification / File Details</h2>
+      </div>
+  <app-specification [response] = "response"></app-specification>
 </div>
+

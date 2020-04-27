@@ -4,9 +4,11 @@
       <h1 class="head-text">ERROR!</h1>
     </div>
     <div class="col-md-9">
-      <p class="small-text" *ngFor= "let error of errors">
-          {{error}}
-      </p>
+      <cdk-virtual-scroll-viewport itemSize="5" class="example-viewport">
+        <div  class="small-text" *cdkVirtualFor="let error of errors" class="example-item">
+            Location: {{error?.location}} Decription:{{error?.description}}
+        </div>
+      </cdk-virtual-scroll-viewport>
     </div>
   </div>
 </div>

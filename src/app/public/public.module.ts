@@ -7,12 +7,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms'
 import { from } from 'rxjs';
 
+import {ScrollingModule} from '@angular/cdk/scrolling';
+
 import { FileComponent } from './display_file/file.component';
 import { ErrorboxComponent} from './error_box/errorbox.component';
 import { ErrorpageComponent} from './error_page/errorpage.component';
 import { HomePageComponent} from './home_page/homepage.component';
 import { NoerrorpageComponent} from './no_error_page/noerrorpage.component';
 import { SpecificationComponent} from './specification/specification.component';
+
 
 import { UploadFileService } from './services/upload-file.service'
 
@@ -23,13 +26,14 @@ import { UploadFileService } from './services/upload-file.service'
     ErrorpageComponent,
     HomePageComponent,
     NoerrorpageComponent,
-    SpecificationComponent
+    SpecificationComponent,
   ],
   imports: [
     HttpClientModule,
     BrowserModule,
     NgbModule,
     FormsModule,
+    ScrollingModule,
     RouterModule.forRoot(publicRoutes)
   ],
   providers: [UploadFileService],
