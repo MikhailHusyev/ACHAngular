@@ -1,9 +1,14 @@
-<div style="background-color: lightgrey;
-color: black;
-width: 200px;
-border: 10px solid black;
-padding: 50px;
-margin: 20px;
-display: block;">
-    These are your errors ja;oirf;oairf;oijairfjao;nrevnjr aleirufn  nsrgnr
+<div class="container-fluid" *ngIf="errors?.length > 0">
+  <div class="row">
+    <div class="col-md-3">
+      <h1 class="head-text">ERROR!</h1>
+    </div>
+    <div class="col-md-9">
+      <cdk-virtual-scroll-viewport itemSize="5" class="example-viewport">
+        <div  class="small-text" *cdkVirtualFor="let error of errors" class="example-item">
+            Location: {{error?.location}} Decription:{{error?.description}}
+        </div>
+      </cdk-virtual-scroll-viewport>
+    </div>
+  </div>
 </div>
