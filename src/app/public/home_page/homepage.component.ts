@@ -20,14 +20,13 @@ export class HomePageComponent implements OnInit {
     file: FileList;
 
     public onChange(fileList: FileList): any {
-        let file = fileList[0];
-        let fileReader: FileReader = new FileReader();
-        let self = this;
-        this.file = fileList;
-        fileReader.onloadend = function(x) {
-          var array = fileReader.result.toString().split("\n");
-          self.fileContent = array;
-        }
-        fileReader.readAsText(file);
+      let file = fileList[0];
+    let fileReader: FileReader = new FileReader();
+      let self = this;
+      fileReader.onloadend = function(x) {
+       var result = fileReader.result.toString().replace(/ /g, "\u00a0").split("\r\n");
+        self.fileContent = result;
       }
+      fileReader.readAsBinaryString(file);
+    }
 }
