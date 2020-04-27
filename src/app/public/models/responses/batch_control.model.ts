@@ -3,6 +3,6 @@ export interface IBatchControl{
   entryAndAddendaCount: number,
   entryHash: string,
   companyID: string,
-  ttldebitEntryAmount: string,
-  ttlcreditEntryAmount: string
+  ttldebitEntryAmount: number,
+  ttlcreditEntryAmount: number
 }

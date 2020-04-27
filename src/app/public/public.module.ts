@@ -11,9 +11,7 @@ import {ScrollingModule} from '@angular/cdk/scrolling';
 
 import { FileComponent } from './display_file/file.component';
 import { ErrorboxComponent} from './error_box/errorbox.component';
-import { ErrorpageComponent} from './error_page/errorpage.component';
 import { HomePageComponent} from './home_page/homepage.component';
-import { NoerrorpageComponent} from './no_error_page/noerrorpage.component';
 import { SpecificationComponent} from './specification/specification.component';
 
 
@@ -23,9 +21,7 @@ import { UploadFileService } from './services/upload-file.service'
   declarations: [
     FileComponent,
     ErrorboxComponent,
-    ErrorpageComponent,
     HomePageComponent,
-    NoerrorpageComponent,
     SpecificationComponent,
   ],
   imports: [

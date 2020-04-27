@@ -25,13 +25,19 @@ export class HomePageComponent implements OnInit {
       let file = fileList[0];
       let fileReader: FileReader = new FileReader();
       let self = this;
+      try{
+        this.response = await this.uploadFileService.putFile(file)
 
-      this.response = await this.uploadFileService.putFile(file)
-
-      fileReader.onloadend = function(x) {
-       var result = fileReader.result.toString().replace(/ /g, "\u00a0").split("\r\n");
-        self.fileContent = result;
+        fileReader.onloadend = function(x) {
+        var result = fileReader.result.toString().replace(/ /g, "\u00a0").split("\r\n");
+         self.fileContent = result;
+       }
+       fileReader.readAsBinaryString(file);
+      }catch(error){
+        this.fileContent = [];
+        this.response = null;
+        this.fileContent.push("Cannot validate current file.  Check if any fields are missing.")
       }
-      fileReader.readAsBinaryString(file);
+
     }
 }

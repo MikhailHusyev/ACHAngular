@@ -1,38 +1,36 @@
 
 
 <div class="container mt-5 mx-auto">
-    <div class = "row">
-        <div class = "col-lg-12 text-center">
-            <h1>File Validator</h1>
-        </div>
-    </div>
+  <div class = "row">
+      <div class = "col-lg-12 text-center">
+          <h1>File Validator</h1>
+      </div>
+  </div>
   <div class="row mx-auto mt-4">
       <div class = "col-lg-12 mx-auto">
           <div class="p-5 h-100 border border-dark">
-              <app-image-upload-with-preview
+              <app-image-upload-with-preview *ngIf="fileContent"
               [fileContent] = "fileContent"></app-image-upload-with-preview>
           </div>
       </div>
   </div>
   <div class="row">
-      <div class = "col-lg-12 col-lg-offset-12 text-center">
-        <div class = "input-group-lg mt-5 mx-auto">
-        <button type = "button" class ="btn btn-secondary -col-3 mx-1" >Validate</button>
-        <button type = "button" class ="btn btn-secondary  -col-4 mx-2">Close</button>
-        <input type = "file" class ="inputfile text" id ="file" accept='text/plain' (change)="onChange($event.target.files)" value="Input">
-        </div>
+    <div class = "col-lg-12 col-lg-offset-12 text-center">
+      <div class = "input-group-lg mt-5 mx-auto">
+        <input type = "file" class ="" id ="file" accept='text/plain' (change)="onChange($event.target.files)" value="Input">
+      </div>
     </div>
   </div>
   <div class = "row mt-5">
-      <div class = "col-lg-12 text-center text-light bg-dark">
-          <h2> Message</h2>
-      </div>
+    <div class = "col-lg-12 text-center text-light bg-dark">
+      <h2> Message</h2>
+    </div>
   </div>
-    <app-errorbox [errors]="response.errors"></app-errorbox>
+    <app-errorbox  [errors]="response.errors" *ngIf="response"></app-errorbox>
   <div class = "row mt-5">
-      <div class = "col-lg-12 text-center text-light bg-dark">
-          <h2>Company Specification / File Details</h2>
-      </div>
-  <app-specification [response] = "response"></app-specification>
+    <div class = "col-lg-12 text-center text-light bg-dark">
+      <h2>Company Specification / File Details</h2>
+    </div>
+  <app-specification [response] = "response" *ngIf="response"></app-specification>
 </div>
 
