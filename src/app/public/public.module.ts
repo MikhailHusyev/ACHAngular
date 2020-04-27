@@ -11,6 +11,7 @@ import { ErrorboxComponent} from './error_box/errorbox.component';
 import { ErrorpageComponent} from './error_page/errorpage.component';
 import { HomePageComponent} from './home_page/homepage.component';
 import { NoerrorpageComponent} from './no_error_page/noerrorpage.component';
+import { ErrorComponent} from './components/error_message/errormsg.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { NoerrorpageComponent} from './no_error_page/noerrorpage.component';
     ErrorboxComponent,
     ErrorpageComponent,
     HomePageComponent,
-    NoerrorpageComponent
+    NoerrorpageComponent,
+    ErrorComponent,
   ],
   imports: [
     HttpClientModule,
