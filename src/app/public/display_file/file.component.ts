@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { UploadFileService } from '../services/upload-file.service';
-import { IResponse } from '../models/error-response.model';
+import { Component, OnInit, Input} from '@angular/core';
+import { Output, EventEmitter  } from '@angular/core';
 
 @Component({
   selector: 'app-image-upload-with-preview',
@@ -10,27 +9,12 @@ import { IResponse } from '../models/error-response.model';
 export class FileComponent implements OnInit {
     title = 'ach-validator-app';
 
-  constructor(private uploadService: UploadFileService) { }
+  constructor() { }
+
 
   ngOnInit() {
   }
+  @Input() fileContent: Array<String>;
 
-  fileContent: String;
-  textValue: String = 'TEST'
 
-  public async onChange(fileList: FileList){
-    let file = fileList[0];
-    let fileReader: FileReader = new FileReader();
-    let self = this;
-    //await this.uploadService.putFile(file)
-    fileReader.onloadend = function(x) {
-      var array = fileReader.result.toString()
-      self.fileContent = array
-    }
-    fileReader.readAsText(file)
-  }
-
-  public onTextChange(value: any){
-    console.log(value)
-  }
 }
