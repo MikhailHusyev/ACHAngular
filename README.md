@@ -1,27 +1,24 @@
-# AchValidatorApp
+# Ach Validator App
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.15.
 
-## Development server
+## Components
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- Home Page Component - The home page component is the default index/home page.  It's main purpose is to display the file, error list, and values of the ACH File.  The  component reads the file, uses the upload file service to create a post request, and makes it readable for other components.
+- File Component - The file component is used to display the incoming file.  The input taken is an array format of a file.
+- Error Box Component - The error box component is used to display an array of errors.
+- Specifcations Component - THe specifications component is used to display the specifications of the input ACH file.
 
-## Code scaffolding
+## Services
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Upload File Service - The upload file service is used to send the file to the ACH Validator API, more information can be found in the dependiencies section.  The response is used within every component.
 
-## Build
+## Depenendencies 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+This application is built to be used in tandom with the [ACH Validator API](https://github.com/MikhailHusyev/ACHFileValidatorAPI).
 
-## Running unit tests
+## Launching
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+- To run the application Angular is required.
+- For complete functionality the ACH Validator API must be used.
+- To start the application run -ng serve within the directory.
